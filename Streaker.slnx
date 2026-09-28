@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Streaker.Api/Streaker.Api.csproj" />
+    <Project Path="src/Streaker.Application/Streaker.Application.csproj" />
+    <Project Path="src/Streaker.Domain/Streaker.Domain.csproj" />
+    <Project Path="src/Streaker.Infrastructure/Streaker.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Streaker.Api.Tests/Streaker.Api.Tests.csproj" />
+    <Project Path="tests/Streaker.Domain.Tests/Streaker.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

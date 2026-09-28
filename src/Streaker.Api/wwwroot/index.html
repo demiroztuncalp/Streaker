@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Streaker — keep your streaks alive</title>
+  <meta name="description" content="Build habits, keep streaks.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-flame">🔥</span> Streaker</a>
+    <nav class="topbar-actions">
+      <a class="link" href="/scalar/v1" target="_blank" rel="noopener">API docs ↗</a>
+      <button class="btn btn-primary" id="new-habit">＋ New habit</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="hero" aria-live="polite">
+      <div class="ring" id="ring"></div>
+      <div class="hero-text">
+        <p class="eyebrow" id="today-label"></p>
+        <h1 id="hero-message">Loading…</h1>
+        <div class="chips" id="chips"></div>
+      </div>
+      <ol class="podium" id="podium" aria-label="Streak leaderboard"></ol>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Your habits</h2>
+        <label class="toggle">
+          <input type="checkbox" id="show-archived">
+          <span>Show archived</span>
+        </label>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <div class="empty-emoji">🌱</div>
+        <h3>No habits yet</h3>
+        <p>Plant your first one and start a streak.</p>
+        <button class="btn btn-primary" id="empty-new">＋ Create a habit</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built with ASP.NET Core · Clean Architecture · <a href="/scalar/v1" target="_blank" rel="noopener">explore the API</a>
+  </footer>
+
+  <dialog id="dialog">
+    <form method="dialog" id="form" autocomplete="off">
+      <h3 id="dialog-title">New habit</h3>
+      <div class="emoji-picker" id="emoji-picker" role="radiogroup" aria-label="Emoji"></div>
+      <label class="field">
+        <span>Name</span>
+        <input id="f-name" maxlength="60" required placeholder="e.g. Read 20 pages">
+      </label>
+      <label class="field">
+        <span>Description <em>(optional)</em></span>
+        <textarea id="f-desc" maxlength="240" rows="2" placeholder="Why does it matter?"></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" id="cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="assertive"></div>
+  <script src="app.js"></script>
+</body>
+</html>
